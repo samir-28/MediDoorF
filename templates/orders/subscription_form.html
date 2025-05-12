@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+  <div class="container">
+    <div class="row justify-content-center"> <!-- CENTERING ROW -->
+      <div class="col-md-8 col-lg-6"> <!-- ADJUSTED WIDTH -->
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title mb-4">Subscriptions Details</h4>
+            <form action="{% url 'enquiry' %}" method="POST">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>First Name</label>
+                  <input type="text" name="first_name" class="form-control" required>
+                </div>
+                <div class="col form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="last_name" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="col form-group">
+                  <label>Phone Number</label>
+                  <input type="text" name="phone" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>Address Line 1</label>
+                  <input type="text" name="address_line_1" class="form-control" required>
+                </div>
+                <div class="col form-group">
+                  <label>Address Line 2</label>
+                  <input type="text" name="address_line_2" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>City</label>
+                  <input type="text" name="city" class="form-control" required>
+                </div>
+                <div class="col form-group">
+                  <label>State</label>
+                  <input type="text" name="state" class="form-control" required>
+                </div>
+                <div class="col form-group">
+                  <label>Country</label>
+                  <input type="text" name="country" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Medicine Name</label>
+                <input type="text" name="medicine_name" class="form-control" placeholder="e.g., Paracetamol" required>
+              </div>
+
+              <div class="form-group">
+                <label>Duration</label>
+                <input type="text" name="duration" class="form-control" placeholder="e.g., 5 days, 1 week" required>
+              </div>
+
+              <div class="form-group">
+                <label>Order Note</label>
+                <textarea name="order_note" rows="2" class="form-control" placeholder="Additional details (optional)"></textarea>
+              </div>
+
+              <button type="submit" name="submit_sub" class="btn btn-primary btn-block">Submit Enquiry</button>
+              <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
+            </form>
+          </div> <!-- card-body -->
+        </div> <!-- card -->
+      </div> <!-- col -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+
+{% endblock %}

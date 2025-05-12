@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-content padding-y bg">
+  <div class="container">
+    <div class="row justify-content-center"> <!-- Centering the form -->
+      <div class="col-md-8 col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title mb-4 text-center">Prescription Details</h4>
+            <form action="{% url 'prescribtion_enquiry' %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              
+              <!-- Your Name -->
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+              </div>
+
+              <!-- Prescription Image Upload -->
+              <div class="form-group">
+                <label for="prescription_image">Prescription Image</label>
+                <input type="file" name="prescription_image" id="prescription_image" class="form-control-file" accept="image/*" required>
+              </div>
+
+              <!-- Prescribed By -->
+              <div class="form-group">
+                <label for="prescribed_by">Prescribed By (Doctor's Name)</label>
+                <input type="text" name="prescribed_by" id="prescribed_by" class="form-control" required>
+              </div>
+
+              <!-- Prescribed Date -->
+              <div class="form-group">
+                <label for="prescribed_date">Prescribed Date</label>
+                <input type="date" name="prescribed_date" id="prescribed_date" class="form-control" required>
+              </div>
+
+              <!-- Hospital Name -->
+              <div class="form-group">
+                <label for="hospital_name">Prescribed In (Hospital Name)</label>
+                <input type="text" name="hospital_name" id="hospital_name" class="form-control" required>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-block">Upload Prescibtion</button>
+              <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
+            </form>
+          </div> <!-- card-body -->
+        </div> <!-- card -->
+      </div> <!-- col -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+{% endblock %}

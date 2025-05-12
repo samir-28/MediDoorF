@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 50px;">
+    <center>
+        <i class="fas fa-check-circle" style="font-size: 72px; margin-bottom: 20px; color: #28A745;"></i>
+    </center>
+    <h2 class="text-center">Subscription Enquiry Sent Successfully</h2>
+    <br>
+    <div class="text-center">
+        <a href="{% url 'store' %}" class="btn btn-success">Shop more</a>
+    </div>
+</div>
+
+<div class="container" style="margin: 0 auto; width: 50%; padding: 50px; background: #f1f1f1; margin-top: 50px; margin-bottom: 50px;">
+    <div class="row invoice row-printable">
+        <div class="col-md-12">
+            <div class="panel panel-default plain" id="dash_0">
+                <div class="panel-body p30">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="invoice-logo">
+                                <img src="{% static 'images/logo1.png' %}" alt="Invoice logo" style="max-height: 40px;">
+                                <p class="mt-2">
+                                    <strong>Medidoor</strong><br>
+                                    Kathmandu, Nepal<br>
+                                    Email: info@medidoor.com<br>
+                                    Phone:+977 98102301010
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-lg-12">
+                            <div class="invoice-footer mt25">
+                                <p class="text-center">Thank you for shopping with us! We will reach out to you soon!!</p>
+                                <p class="text-center text-muted" style="font-size: 13px;">
+                                    If you have any questions, contact us at <strong>info@medidoor.com</strong> or call <strong>+977 98102301010</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- panel-body -->
+            </div> <!-- panel -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}
